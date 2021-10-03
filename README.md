@@ -1,3 +1,5 @@
+# Motivation
+NuxtLinkを使わずに任意のタイミングでprefetchしたい。
 # Setup
 ## パッケージインストール
 ```
@@ -96,3 +98,6 @@ const runSomeThenRouterPush2 = () => {
   router.push('/hoge')
 }
 ```
+
+# example
+[NuxtRepository](https://github.com/humiyan02/nuxt-prefetch-sample)
