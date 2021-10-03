@@ -1,9 +1,13 @@
 {
   "name": "nuxt-prefetch",
   "version": "1.0.0",
+  "private": false,
   "description": "library prefetching links for nuxtjs",
   "main": "index.js",
   "author": "humiyan02",
+  "bugs": {
+    "url": "https://github.com/humiyan02/nuxt-prefetch/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/humiyan02/nuxt-prefetch"
@@ -21,7 +25,7 @@
     "nuxt": "^2.15.7"
   },
   "devDependencies": {
-    "@nuxt/types": "^2.15.7",
+    "@nuxt/types": "^2.15.8",
     "@nuxtjs/composition-api": "^0.29.2",
     "@nuxtjs/eslint-config-typescript": "^6.0.1"
   }
