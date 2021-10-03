@@ -1,9 +1,8 @@
 {
   "name": "nuxt-prefetch",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": false,
   "description": "library prefetching links for nuxtjs",
-  "main": "dist/index.js",
   "author": "humiyan02",
   "bugs": {
     "url": "https://github.com/humiyan02/nuxt-prefetch/issues"
@@ -20,6 +19,8 @@
     "vue-router"
   ],
   "license": "MIT",
+  "main": "dist/index.js",
+  "type": "module",
   "scripts": {
     "build": "npx tsc"
   },
