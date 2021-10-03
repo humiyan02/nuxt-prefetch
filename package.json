@@ -1,6 +1,6 @@
 {
   "name": "nuxt-prefetch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "description": "library prefetching links for nuxtjs",
   "main": "index.js",
