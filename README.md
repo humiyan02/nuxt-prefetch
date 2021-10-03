@@ -1,15 +1,14 @@
 # Motivation
-NuxtLinkを使わずに任意のタイミングでprefetchしたい。
-# Setup
-## パッケージインストール
+wanting to prefetch  at any time without using NuxtLink
+# Getting Started 
+## Install package
 ```
 npm install nuxt-prefetch
 ```
-
-## 実装
+## Quick Start
 pages/index.vue
 ```
-import { usePrefetchRouter } from ""
+import { usePrefetchRouter } from "nuxt-prefetch"
 export default defineComponent({
   setup() {
     const { prefetch } = usePrefetchRouter('/hoge')
@@ -17,51 +16,48 @@ export default defineComponent({
   },
 })
 ```
-
+See network tab in Devtools and you look at hoge.js loaded.
 
 # Usage
-UseCase1:ページが表示されて数秒後prefetch
+UseCase1:prefetch link after few seconds
 ```
 export default defineComponent({
   setup() {
-    // プリフェッチしたいpathを渡してuseする。
     const { prefetch } = usePrefetchRouter('/hoge')
-    // ユースケース①：ページcreatedから一定時間後にプリフェッチ
     setTimeout(() => {
       prefetch()
     }, 5000)
   },
 })
 ```
-UseCase2:プリフェッチして非同期処理後にページ遷移
+UseCase2:prefetch before run async function and run then navigation
 ```
 const {prefetchRouter} = usePrefetchRouter('/hoge')
 const execAsyncFunc = () =>
   prefetchRouter(async () => {
-    console.log('非同期処理の前にprefetch')
     await fetch('https://jsonplaceholder.typicode.com/todos/1')
-      .then((response) => response.json()) // この後にページ遷移
+      .then((response) => response.json()) // then navigate to /hoge 
       .catch((e) => {
         console.log(e)
       })
   })
 
 ```
-UseCase3:選択したpathを全てPrefetch
+UseCase3: prefetch all paths
 ```
 const {prefetchAll} = usePrefetchRouter('/hoge')
 prefetchAll(['/hoge', '/fuga'])
 
 ```
 
-UseCase4:画面内に表示されたらprefetch
+UseCase4:prefetch by viewing element
 ```
 <template>
   <div>
-    ↓スクロール
+    ↓scroll
     <div style="height: 1000px; width: 100%"></div>
     <button ref="prefetchTarget" @click="runSomeThenRouterPush">
-      画面内に表示されたらプリフェッチ！
+      prefetch by viewing
     </button>
   </div>
 </template>
@@ -79,25 +75,17 @@ export default defineComponent({
 
 ```
 
-
-オプション1：ページ遷移
+Option1：use router.push
 ```
 const {goToPage} = usePrefetchRouter('/hoge')
-const runSomeThenRouterPush = () => {
-  console.log('なんかの処理')
-  goToPage() // router.push('/test')
-}
+goToPage() // router.push('/test')
 ```
 
-オプション2：routerも使える
+Option2：use VueRouter
 ```
 const {router} = usePrefetchRouter('/hoge')
-
-const runSomeThenRouterPush2 = () => {
-  console.log('重い処理・非同期処理')
-  router.push('/hoge')
-}
+router.push('/hoge')
 ```
 
-# example
+# Example
 [NuxtRepository](https://github.com/humiyan02/nuxt-prefetch-sample)
