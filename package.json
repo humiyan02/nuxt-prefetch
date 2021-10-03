@@ -1,12 +1,12 @@
 {
   "name": "nuxt-prefetch",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "library prefetching links for nuxtjs",
   "main": "index.js",
-  "author": "fumifumi",
+  "author": "humiyan02",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/humiyan02"
+    "url": "git+https://github.com/humiyan02/nuxt-prefetch"
   },
   "keywords": [
     "nuxt",
