@@ -1,5 +1,9 @@
 # Motivation
-wanting to prefetch  at any time without using NuxtLink
+Wanting to prefetch at any time without using `<NextLink/>`.
+
+`<NextLink/>` prefetch links when viewing it and navigate fast.
+Without `<NextLink/>`, `router.push()` don't prefetch links and slowly navigate pages.
+Therefore it's needed to prefetch anywhere and anytime before `router.push()`. 
 # Getting Started 
 ## Install package
 ```
@@ -88,4 +92,4 @@ router.push('/hoge')
 ```
 
 # Example
-[NuxtRepository](https://github.com/humiyan02/nuxt-prefetch-sample)
+[NuxtPrefetchSampleRepository](https://github.com/humiyan02/nuxt-prefetch-sample)
