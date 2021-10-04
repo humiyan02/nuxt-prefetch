@@ -1,8 +1,8 @@
 # Motivation
-Wanting to prefetch at any time without using `<NextLink/>`.
+Wanting to prefetch at any time without using `<NuxtLink/>`.
 
-`<NextLink/>` prefetch links when viewing it and navigate fast.
-Without `<NextLink/>`, `router.push()` don't prefetch links and slowly navigate pages.
+`<NuxtLink/>` prefetch links when viewing it and navigate fast.
+Without `<NuxtLink/>`, `router.push()` don't prefetch links and slowly navigate pages.
 Therefore it's necessary to prefetch anywhere and anytime before `router.push()`. 
 # Getting Started 
 ## Install package
